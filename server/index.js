@@ -74,12 +74,12 @@ const router = {
         return;
       }
 
-      console.log(`a new user ${user.email} has been created`);
       users.push({
         email: data.email.toLowerCase(),
         password: data.password,
         id: nextId(),
       });
+      console.log(`a new user ${data.email} has been created`);
 
       res.statusCode = 201;
       res.end(JSON.stringify({ email: data.email, token: data.password }));
