@@ -1,6 +1,6 @@
 import http from 'http';
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 const users = [
   {
@@ -18,11 +18,14 @@ const nextId = () => Math.max(...Object.keys(users));
 const router = {
   POST: {
     '/api/login': (req, res, matches, body) => {
+      console.log('/api/login');
       res.setHeader('Content-Type', 'application/json');
       const data = JSON.parse(body);
 
       const user = findUser(data.email);
+
       if (!user) {
+        console.log(`user ${data.email} not found`);
         res.statusCode = 409;
         res.end(
           JSON.stringify({
@@ -35,6 +38,7 @@ const router = {
       }
 
       if (!isMatchPassword(data)) {
+        console.log(`password for user ${user.email} is incorrect`);
         res.statusCode = 403;
         res.end(
           JSON.stringify({
@@ -46,16 +50,19 @@ const router = {
         return;
       }
 
+      console.log(`user ${user.email} is logged in`);
       res.statusCode = 200;
       res.end(JSON.stringify({ email: user.email, token: user.password }));
     },
     '/api/signup': (req, res, matches, body, users) => {
+      console.log('/api/signup');
       res.setHeader('Content-Type', 'application/json');
       const data = JSON.parse(body);
 
       const user = findUser(data.email);
 
       if (user) {
+        console.log(`user ${user.email} already exists`);
         res.statusCode = 409;
         res.end(
           JSON.stringify({
@@ -67,6 +74,7 @@ const router = {
         return;
       }
 
+      console.log(`a new user ${user.email} has been created`);
       users.push({
         email: data.email.toLowerCase(),
         password: data.password,
@@ -109,7 +117,7 @@ const startServer = (router) => {
       });
   });
 
-  server.listen(port, () => console.log(`server start on ${port}`));
+  server.listen(port, () => console.log(`server start`));
 };
 
 startServer(router);

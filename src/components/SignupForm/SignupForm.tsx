@@ -10,15 +10,15 @@ import { instanceOfApiError } from '../../api';
 import { routes } from '../../routes';
 
 export const SignupForm: FC = () => {
-  const [email, setEmail] = useState<ILoginData['email']>('admin@gmail.com');
+  const [email, setEmail] = useState<ILoginData['email']>('');
   const [statusEmail, setStatusEmail] = useState<InputProps['status']>('default');
   const [feedbackEmail, setFeedbackEmail] = useState<InputProps['feedback']>('');
 
-  const [password, setPassword] = useState<ILoginData['password']>('ZAPpupenec1');
+  const [password, setPassword] = useState<ILoginData['password']>('');
   const [statusPass, setStatusPass] = useState<InputProps['status']>('default');
   const [feedbackPass, setFeedbackPass] = useState<InputProps['feedback']>('');
 
-  const [confirmPassword, setConfirmPassword] = useState<ILoginData['password']>('ZAPpupenec1');
+  const [confirmPassword, setConfirmPassword] = useState<ILoginData['password']>('');
   const [statusConfirmPassword, setStatusConfirmPassword] =
     useState<InputProps['status']>('default');
   const [feedbackConfirmPassword, setFeedbackConfirmPassword] =
