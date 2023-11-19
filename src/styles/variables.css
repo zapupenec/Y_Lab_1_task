@@ -1,0 +1,13 @@
+:root {
+  --bg-main: #18181b;
+  --primary: #27272a;
+  --secondary: #fafafa;
+  --accent-color: #eab308;
+  --accent-hover: #ff7300;
+  --text: #18181b;
+  --text-primary: #fafafa;
+  --text-hint: #a1a1a1;
+  --invalid: #dc2626;
+  --valid: #0a720a;
+  --s: rgb(205 204 21);
+}

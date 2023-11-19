@@ -1,0 +1,12 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.btnLogout {
+  width: auto;
+}

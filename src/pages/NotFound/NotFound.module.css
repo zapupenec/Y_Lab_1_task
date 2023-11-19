@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.content {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 30px;
+  background-color: var(--primary);
+  border-radius: 10px;
+}
+
+.title {
+  color: var(--text-primary);
+  font-size: 42px;
+  text-align: center;
+}
+
+.button {
+  align-self: center;
+  width: 70%;
+}

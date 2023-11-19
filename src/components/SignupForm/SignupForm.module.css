@@ -1,0 +1,49 @@
+.wrapper {
+  display: flex;
+  padding: 40px 50px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  gap: 24px;
+  border-radius: 10px;
+  background: var(--primary);
+  box-sizing: content-box;
+}
+
+.title {
+  color: var(--text-primary);
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 50px;
+  margin: 0;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.registration {
+  align-self: flex-end;
+  color: var(--text-primary);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: var(--accent-color);
+}
+
+.link:focus {
+  color: var(--accent-color);
+  outline: 1px solid var(--accent-color);
+  border-radius: 3px;
+}
+
+.button {
+  align-self: center;
+  width: 70%;
+}
