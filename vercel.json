@@ -1,0 +1,11 @@
+{
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "headers": {
+        "Host": "y-lab-1-task.onrender.com"
+      },
+      "dest": "https://y-lab-1-task.onrender.com/api/$1"
+    }
+  ]
+}
